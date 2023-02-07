@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+body {
+  background-color: lightgray;
+}
+
+.navbar-container {
+  background-color: orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar-buttons-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-buttons-container button {
+  padding: 0.5rem 2rem;
+}
