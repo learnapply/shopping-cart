@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <div className="navbar-container">
-      <h1>Shopping Cart</h1>
-      <div className="navbar-buttons-container">
+      <h1>GarliCart</h1>
+      <ul className="navbar-links-container">
         <Link to="/">
-          <button>Home</button>
+          <li>Home</li>
         </Link>
         <Link to="/shop">
-          <button>Shop</button>
+          <li>Shop</li>
         </Link>
         <Link to="/cart">
-          <button>Cart</button>
+          <li>Cart</li>
         </Link>
-      </div>
+      </ul>
     </div>
   );
 }

@@ -1,26 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
-body {
+#root {
   background-color: lightgray;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar-container {
-  background-color: orange;
+  background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
+  color: white;
 }
 
-.navbar-buttons-container {
+.navbar-links-container {
   display: flex;
   gap: 1rem;
 }
 
-.navbar-buttons-container button {
+.navbar-links-container li {
   padding: 0.5rem 2rem;
+  list-style: none;
+  color: white;
+  font-size: 1.3rem;
 }
+
+.navbar-links-container li:hover {
+  color: rgb(108, 73, 118);
+} 
+
+.home-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background-color: black;
+  overflow: hidden;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: white;
+  padding: 2rem;
+  margin-left: 12rem;
+}
+
+.hero h2 {
+  font-size: 10rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: rgb(197, 197, 197);
+}
+
+.shop-now-btn {
+  padding: 0.3rem 2rem;
+  margin-top: 2rem;
+  align-self:flex-start;
+}
+
+.home-img {
+  background-image: url("../src/assets/garlic-landing.jpg");
+  background-size: cover;
+  height: 800px;
+  width: 650px;
+  box-shadow: inset 150px 100px 100px -16px rgba(0, 0, 0, 1);
+}
+
+.button-59 {
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-59:focus {
+  color: #171e29;
+}
+
+.button-59:hover {
+  border-color: rgb(108, 73, 118);
+  color: rgb(108, 73, 118);
+  fill: rgb(108, 73, 118);
+}
+
+.button-59:active {
+  border-color: rgb(108, 73, 118);
+  color: rgb(108, 73, 118);
+  fill: rgb(108, 73, 118);
+}
+
+@media (min-width: 768px) {
+  .button-59 {
+    min-width: 170px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+
