@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cartIcon from "../assets/cart-icon.png";
 
-function Navbar() {
+function Navbar({ cart }) {
+  const count = (cart.filter((product) => product.quantity)).length;
   return (
     <div className="navbar-container">
       <h1>GarliCart</h1>
@@ -13,7 +15,10 @@ function Navbar() {
           <li>Shop</li>
         </Link>
         <Link to="/cart">
-          <li>Cart</li>
+          <li>
+            <img className="cart-logo" src={cartIcon} width="40px" />
+            <small>{count}</small>
+          </li>
         </Link>
       </ul>
     </div>

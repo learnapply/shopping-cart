@@ -12,7 +12,6 @@ function App() {
 
   function handleAddToCart(product) {
     let itemIndex = cart.findIndex((item) => item.id === product.id);
-
     let newCart = [...cart];
     if (newCart[itemIndex].quantity) {
       newCart[itemIndex].quantity += 1;
@@ -20,8 +19,14 @@ function App() {
       newCart[itemIndex].quantity = 1;
     }
     setCart(newCart);
+  }
 
-    console.log(cart);
+  function handleChange(e, product) {
+    let itemIndex = cart.findIndex((item) => item.id === product.id);
+    let newCart = [...cart];
+    newCart[itemIndex].quantity = e.target.value;
+    setCart(newCart);
+    console.log(cart)
   }
 
   function handleRemoveFromCart(product) {
@@ -45,6 +50,7 @@ function App() {
             <Shop
               products={cart}
               handleAddToCart={handleAddToCart}
+              handleChange={handleChange}
               handleRemoveFromCart={handleRemoveFromCart}
             />
           }

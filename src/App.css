@@ -22,17 +22,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 4rem;
   color: white;
 }
 
 .navbar-links-container {
   display: flex;
-  gap: 1rem;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar-links-container li {
-  padding: 0.5rem 2rem;
   list-style: none;
   color: white;
   font-size: 1.3rem;
@@ -170,12 +171,35 @@ a {
 
 .add-to-card-btn {
   height: 32px;
+  background-color: #ffffff;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+    transform 0.1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
 }
 
-.adjust-quantity{
+.add-to-card-btn:hover {
+  background-color: #f7f7f7;
+  border-color: #000000;
+}
+
+.adjust-quantity {
   display: flex;
   justify-content: center;
-  gap: 8px
+  gap: 8px;
 }
 
 .adjust-quantity input {
@@ -186,5 +210,29 @@ a {
 
 .adjust-quantity button {
   padding: 0.2rem 0.6rem;
-  font-size: large;
+  background-color: #ffffff;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
+    transform 0.1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: auto;
 }
+
+.adjust-quantity button:active {
+  background-color: #f7f7f7;
+  border-color: #000000;
+  transform: scale(0.96);
+}
+

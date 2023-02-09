@@ -1,15 +1,15 @@
 import React from "react";
 
 function ProductCard({
-  id,
   name,
+  product,
   price,
   quantity,
   imgUrl,
   handleAddToCart,
+  handleChange,
   handleRemoveFromCart,
 }) {
-  console.log(quantity);
   return (
     <div className="product-card">
       <img src={imgUrl} alt={name} width="200px" />
@@ -27,7 +27,13 @@ function ProductCard({
         ) : (
           <div className="adjust-quantity">
             <button onClick={handleRemoveFromCart}>-</button>
-            <input type="text" name="quantity" id="quantity" value={quantity} />
+            <input
+              type="text"
+              name="quantity"
+              id="quantity"
+              value={quantity}
+              onChange={(e) => handleChange(e, product)}
+            />
             <button onClick={handleAddToCart}>+</button>
           </div>
         )}
