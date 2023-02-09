@@ -8,23 +8,30 @@ import { products as productsArray } from "./data/products";
 import "./App.css";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(productsArray);
 
-  function handleClick(product) {
+  function handleAddToCart(product) {
     let itemIndex = cart.findIndex((item) => item.id === product.id);
-    if (itemIndex === -1) {
-      setCart([
-        ...cart,
-        {
-          ...product,
-          quantity: 1,
-        },
-      ]);
-    } else {
-      let newCart = [...cart];
+
+    let newCart = [...cart];
+    if (newCart[itemIndex].quantity) {
       newCart[itemIndex].quantity += 1;
-      setCart(newCart);
+    } else {
+      newCart[itemIndex].quantity = 1;
     }
+    setCart(newCart);
+
+    console.log(cart);
+  }
+
+  function handleRemoveFromCart(product) {
+    let itemIndex = cart.findIndex((item) => item.id === product.id);
+    if (cart[itemIndex].quantity === 1) {
+      setCart(cart.filter((item) => item.id !== product.id));
+    }
+    let newCart = [...cart];
+    newCart[itemIndex].quantity -= 1;
+    setCart(newCart);
   }
 
   return (
@@ -34,7 +41,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/shop"
-          element={<Shop products={productsArray} handleClick={handleClick} />}
+          element={
+            <Shop
+              products={cart}
+              handleAddToCart={handleAddToCart}
+              handleRemoveFromCart={handleRemoveFromCart}
+            />
+          }
         />
         <Route path="/cart" element={<Cart />} />
       </Routes>

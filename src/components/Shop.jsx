@@ -1,19 +1,20 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 
-function Shop({ products, handleClick }) {
+function Shop({ products, handleAddToCart, handleRemoveFromCart }) {
   return (
-    <div>
+    <div className="product-card-container">
       {products.map((product) => {
         return (
           <ProductCard
             key={product.id}
             id={product.id}
             name={product.name}
-            desc={product.desc}
             price={product.price}
+            quantity={product.quantity}
             imgUrl={product.src}
-            handleClick={() => handleClick(product)}
+            handleAddToCart={() => handleAddToCart(product)}
+            handleRemoveFromCart={() => handleRemoveFromCart(product)}
           />
         );
       })}
