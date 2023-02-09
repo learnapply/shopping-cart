@@ -1,7 +1,8 @@
 import React from "react";
 
-function ProductCard({
+function CartCard({
   name,
+  desc,
   product,
   price,
   quantity,
@@ -11,14 +12,17 @@ function ProductCard({
   handleRemoveFromCart,
 }) {
   return (
-    <div className="product-card">
-      <img src={imgUrl} alt={name}/>
-      <div className="product-card-info">
-        <div>
-          <p>{name}</p>
+    <div className="cart-card">
+      <div className="cart-img-container">
+        <img src={imgUrl} alt={name} />
+      </div>
+      <div className="cart-card-info">
+        <div className="cart-card-product-info">
+          <h3>{name}</h3>
           <p>
             <em>${price}/kg</em>
           </p>
+          <p>{desc}</p>
         </div>
         {!quantity ? (
           <button className="add-to-card-btn" onClick={handleAddToCart}>
@@ -42,4 +46,4 @@ function ProductCard({
   );
 }
 
-export default ProductCard;
+export default CartCard;

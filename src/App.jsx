@@ -26,7 +26,7 @@ function App() {
     let newCart = [...cart];
     newCart[itemIndex].quantity = e.target.value;
     setCart(newCart);
-    console.log(cart)
+    console.log(cart);
   }
 
   function handleRemoveFromCart(product) {
@@ -55,7 +55,17 @@ function App() {
             />
           }
         />
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cart={cart}
+              handleAddToCart={handleAddToCart}
+              handleChange={handleChange}
+              handleRemoveFromCart={handleRemoveFromCart}
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
